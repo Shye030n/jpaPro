@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/tymelef/layout" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+  <h3>Sample Layout Header</h3>
+</div>
+
+<div>
+    <h1> thymeleaf 란?</h1>
+    <h2>DB에서 가져온 데이터를 웹 페이지에 보여줄 때
+        (= 타임리프를 통해 html파일에 데이터를 삽입하여 완성된 페이지를 클라이언트에 보여줌</h2>
+    <h3> 서버에서 작동하며, 주로 SpringBoot와 함께 사용된다</h3>
+</div>
+
+<div layout:fragment="content">
+  <h3>Page Content goes hear</h3>
+
+</div>
+
+<div>
+  <h3>Sample Layout footer</h3>
+</div>
+<th:block layout:fragment="script">
+
+</th:block>
+
+</body>
+</html>

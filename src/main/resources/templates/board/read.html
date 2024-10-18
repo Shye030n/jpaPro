@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/basic.html}"
+      lang="en">
+
+<div layout:fragment="content">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Read Page</h5>
+      <form action="/board/register" method="post">
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Title</span>
+          <input type="text" name="title" class="form-control" value="${dto.title}" readonly>
+        </div>
+        <!--     placeholder: 글자 적는 곳에 미리보기 써지는 위치에 글자       -->
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Content</span>
+          <textarea name="content" class="form-control col-sm-5" rows="5" value="${dto.content}" readonly></textarea>
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Writer</span>
+          <input type="text" name="writer" class="form-control" value="${dto.writer}" readonly>
+        </div>
+
+        <div class="input-group mb-3">
+          <button type="submit" class="btn btn-primary">Modify</button>
+          <button type="reset" class="btn btn-secondary">List</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+</html>

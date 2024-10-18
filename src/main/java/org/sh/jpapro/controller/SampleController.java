@@ -82,5 +82,10 @@ public class SampleController {
         model.addAttribute("strList", strList);
         model.addAttribute("strList2", strList2);
     }
+    // http://localhost:8083/ex/ex3
+    @GetMapping("ex/ex3")
+    public void ex3() {
+        log.info("ex3");
+    }
 }
 
