@@ -29,10 +29,10 @@ public class Board { // Board 테이블을 만드는 클래스 => MySql에 Board
     @Column(nullable = false, length = 50)
     private String writer;
 
-    @CreationTimestamp
-    @DateTimeFormat(pattern="yyyy-MM-dd'T'HH:mm:ss")
-    private Date postdate;
-
     @ColumnDefault("0")
     private int visitcount; //NN
+
+    public void updateVisitcount() {
+        this.visitcount++; //이 함수를 부르기만 하면 => 원래 visitcount에 자동으로 +1씩 됨
+    }
 }

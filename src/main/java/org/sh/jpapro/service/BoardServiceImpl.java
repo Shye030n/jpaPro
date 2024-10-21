@@ -2,7 +2,10 @@ package org.sh.jpapro.service;
 
 import lombok.extern.log4j.Log4j2;
 import org.sh.jpapro.domain.Board;
+import org.sh.jpapro.dto.PageRequestDTO;
+import org.sh.jpapro.dto.PageResponseDTO;
 import org.sh.jpapro.repository.BoardRepository;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,9 +22,12 @@ public class BoardServiceImpl implements BoardService {
 
 
     @Override
-    public List<Board> getList() {
+    public PageResponseDTO<Board> getList(PageRequestDTO pageRequestDTO) {
         log.info("getList");
-        return boardRepository.findAll();
+        Pageable pageable=pageRequestDTO.getPageable("bno");
+        List<Board> boardList = boardRepository.findAll();
+        log.info("getList");
+        return boardList;
     }
 
     @Override
