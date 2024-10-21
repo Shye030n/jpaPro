@@ -14,7 +14,7 @@ import java.util.Date;
 @NoArgsConstructor
 @ToString
 @Builder
-public class Board { // Board 테이블을 만드는 클래스 => MySql에 Board 테이블 생성됨.
+public class Board extends BaseEntity { // Board 테이블을 만드는 클래스 => MySql에 Board 테이블 생성됨.
 
     @Id // pk 지정
     @GeneratedValue(strategy = GenerationType.IDENTITY) //AI 지정
