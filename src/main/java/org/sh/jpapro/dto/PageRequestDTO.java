@@ -30,7 +30,7 @@ public class PageRequestDTO {
         if(type == null || type.isEmpty()){
             return null;
         }
-        return type.split("");
+        return type.split(""); //"" 글자 각 하나씩을 선택(하나짜리 String 배열)
     }
 
     public Pageable getPageable(String...props) {
